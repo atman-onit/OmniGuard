@@ -30,7 +30,7 @@ class Incident(Base):
     #used by mods
     status: Mapped[str] = mapped_column(String, default="new")  
     acknowledged_by: Mapped[Optional[str]] = mapped_column(String, nullable=True)
-    acknowledged_at: Mapped[Optional[str]] = mapped_column(DateTime, nullable=True) 
+    acknowledged_at: Mapped[Optional[datetime]] = mapped_column(DateTime, nullable=True) 
 
     #metadata
     created_at: Mapped[datetime] = mapped_column(DateTime, default=lambda: datetime.now(timezone.utc))
